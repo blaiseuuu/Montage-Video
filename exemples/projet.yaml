@@ -1,0 +1,23 @@
+# Exemple de projet de montage.
+# Lancer avec : montage projet exemples/projet.yaml
+# Les chemins sont relatifs à ce fichier.
+
+format: youtube          # source, youtube, youtube-4k, shorts, instagram, instagram-portrait, brouillon
+adaptation: pad          # pad = bandes noires, crop = recadrage pour remplir le cadre
+sortie: rendu/ma_video.mp4
+fondu_entree: 0.5        # secondes
+fondu_sortie: 1.0
+
+clips:
+  - source: rushes/intro.mp4
+    debut: 0:02          # formats acceptés : 2, "0:02", "00:00:02.500"
+    fin: 0:10
+  - source: rushes/interview.mp4
+    debut: 1:15
+    fin: 3:40
+  - rushes/plan_final.mp4   # clip entier
+
+musique:
+  source: musique/fond.mp3
+  volume: 0.25           # 1.0 = volume d'origine
+  fondu_sortie: 3        # la musique boucle si elle est trop courte
